@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package me.sticnarf.agga.messages;
+
+import "shared.proto";
+
+message RequestServer {
+    string key = 1;
+}
+
+message ResponseServer {
+    ServerInfo info = 1;
+}
