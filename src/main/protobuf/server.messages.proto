@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package me.sticnarf.agga;
+
+import "messages.proto";
+
+message RequestServer {
+    int32 seq = 1;
+    string clientKey = 2;
+}
+
+message ResponseServer {
+    int32 seq = 1;
+    ServerInfo info = 2;
+}

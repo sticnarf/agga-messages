@@ -2,10 +2,22 @@ syntax = "proto3";
 
 package me.sticnarf.agga;
 
-message Greeting {
-    string name = 1;
+message Connect {
+    string key = 1;
+    repeated string knownServers = 2;
 }
 
-message Bye {
-    string name = 1;
+message ServerInfo {
+    string id = 1;
+    string address = 2;
+}
+
+message ServerList {
+    repeated ServerInfo servers = 1;
+}
+
+message Packet {
+    uint32 conn = 1;
+    uint32 seq = 2;
+    bytes data = 3;
 }
