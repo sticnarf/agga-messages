@@ -13,3 +13,8 @@ message ResponseServer {
     int32 seq = 1;
     ServerInfo info = 2;
 }
+
+message SendToClient {
+    string clientKey = 1;
+    ServerSegment data = 2;
+}

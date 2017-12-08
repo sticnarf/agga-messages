@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package me.sticnarf.agga;
 
-message Connect {
-    string key = 1;
+message FetchServerList {
+    string clientKey = 1;
     repeated string knownServers = 2;
 }
 
@@ -16,8 +16,23 @@ message ServerList {
     repeated ServerInfo servers = 1;
 }
 
-message Packet {
+message ClientSegment {
     uint32 conn = 1;
     uint32 seq = 2;
     bytes data = 3;
+    string clientKey = 4;
+}
+
+message ServerSegment {
+    uint32 conn = 1;
+    uint32 seq = 2;
+    bytes data = 3;
+}
+
+message Connect {
+    string clientKey = 1;
+}
+
+message Ack {
+    string serverId = 1;
 }
