@@ -18,3 +18,12 @@ message SendToClient {
     string clientKey = 1;
     ServerSegment data = 2;
 }
+
+message RegisterClient {
+    string clientKey = 1;
+}
+
+message AckRegistry {
+    string clientKey = 1;
+    string serverId = 2;
+}
